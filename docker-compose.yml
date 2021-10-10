@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  plantilla-front:    
+    image: plantilla-front:1.0.0
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        MODE: 'production'
+    container_name: plantilla-front
+    ports:
+      - 8101:80
